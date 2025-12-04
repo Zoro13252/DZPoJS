@@ -5,9 +5,11 @@
 const concatenateStrings = (str1, str2) => {
 
     let concatenated = str1 + str2;
-    let result = concatenated.replace(/\s+/g, '');
+    let result = concatenated.replace(/\s /g, '');
     return result;
 }
+
+
 
 
 //Задача 2. Реализуйте функцию getStringLength, которая принимает строку в качестве аргумента и возвращает ее длину.
@@ -34,22 +36,17 @@ const getStringFromTemplate = (firstName, lastName) => {
 */
 
 
-const getChar = (str, index) => {
-    return str[index - 1];
+const getChar = (str, i) => {
+    return str[i - 1];
 }
+
 
 /*Задача 5
 Реализуйте функцию removeFirstOccurrences, которая удаляет первое вхождение подстроки  внутри строки.
-'To be or not to be', 'not'  => 'To be or  to be'
-'I like legends', 'end' => 'I like legs',
-'ABABAB','BA' => 'ABAB'
 */
 
 const removeFirstOccurrences = (str, subStr) => {
     const index = str.indexOf(subStr);
-    if (index === -1) {
-        return str;
-    }
     return str.slice(0, index) + str.slice(index + subStr.length);
 }
 
@@ -65,5 +62,3 @@ const getRectangleString = (width, height) => {
     }
     return result.trim();
 }
-
-console.log(getRectangleString(5, 3));
