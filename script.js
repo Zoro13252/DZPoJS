@@ -56,9 +56,33 @@ const removeFirstOccurrences = (str, subStr) => {
 */
 
 const getRectangleString = (width, height) => {
-    let result = '';
-    for (let i = 0; i < height; i++) {
-        result += '*'.repeat(width) + '\n';
+    let result = "";
+    
+
+    for (let i = 0; i < width; i++) {
+        result += "*";
     }
-    return result.trim();
+    result += "\n";
+    
+   
+    for (let row = 0; row < height - 2; row++) {
+        result += "*"; 
+        
+        for (let space = 0; space < width - 2; space++) {
+            result += " "; 
+        }
+        
+        result += "*"; 
+        result += "\n";
+    }
+    
+ 
+    for (let i = 0; i < width; i++) {
+        result += "*";
+    }
+    result += "\n";
+    
+    return result;
 }
+
+console.log(getRectangleString(60, 8));
